@@ -1,0 +1,24 @@
+{
+  "name": "quilty-as-charged",
+  "version": "1.0.0",
+  "description": "A fun and quirky quilting toolkit: pixel-art quilt designer, fabric math, backing & binding calculators, and reference charts.",
+  "scripts": {
+    "sync": "npx cap sync android",
+    "android": "npx cap sync android && npx cap open android",
+    "build:assets": "npx capacitor-assets generate --android --iconBackgroundColor '#FAF3E3'",
+    "build:aab": "npx cap sync android && cd android && gradlew.bat bundleRelease",
+    "build:apk": "npx cap sync android && cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/share": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/assets": "^3.0.5"
+  }
+}

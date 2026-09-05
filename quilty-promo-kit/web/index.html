@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quilty as Charged — the quilting toolkit that does the fabric math</title>
+<meta name="description" content="Free Android app for quilters. Paint a quilt on a grid and get the cutting chart instantly — squares, strips and yardage per fabric. Plus triangle, binding and backing math. No ads, works offline.">
+<meta property="og:title" content="Quilty as Charged">
+<meta property="og:description" content="Paint a quilt. Get the cutting chart. A free, offline quilting toolkit for Android.">
+<meta property="og:image" content="feature-graphic-1024x500.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FAF3E3">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--muslin:#FAF3E3;--butter:#F6C453;--rose:#E8879B;--sage:#8FAE8B;--denim:#5B7B9A;--cherry:#C94F4F;--thread:#4A3B32}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:var(--thread);line-height:1.6;
+  background:var(--muslin);background-image:radial-gradient(#e8dcc3 1px,transparent 1px);background-size:22px 22px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+
+/* patchwork strip, same fabrics as the app */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;height:26px}
+.strip>div{border:1.5px dashed rgba(255,255,255,.7);outline:1px solid rgba(74,59,50,.22)}
+.p-gingham{background:repeating-linear-gradient(0deg,rgba(255,255,255,.45) 0 8px,transparent 8px 16px),repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 8px,transparent 8px 16px),var(--rose)}
+.p-dots{background:radial-gradient(circle at 6px 6px,#fff8 3px,transparent 3.5px);background-size:16px 16px;background-color:var(--denim)}
+.p-dots-sage{background:radial-gradient(circle at 6px 6px,#fff8 3px,transparent 3.5px);background-size:16px 16px;background-color:var(--sage)}
+.p-stripe{background:repeating-linear-gradient(45deg,var(--butter) 0 10px,#fff5 10px 18px)}
+.p-cherry{background:repeating-linear-gradient(-45deg,var(--cherry) 0 12px,#d96a6a 12px 24px)}
+.p-plum{background:radial-gradient(circle at 8px 8px,#fff5 4px,transparent 4.5px);background-size:20px 20px;background-color:#8E6A9E}
+
+header{text-align:center;padding:46px 0 8px}
+h1{font-family:'Fredoka',sans-serif;font-size:clamp(38px,9vw,68px);line-height:.98;margin:0;letter-spacing:-1px}
+.tag{color:var(--cherry);font-weight:800;letter-spacing:2.6px;text-transform:uppercase;font-size:clamp(11px,2.4vw,14px);margin-top:12px}
+.lede{font-size:clamp(17px,2.6vw,21px);max-width:600px;margin:22px auto 0}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:28px 0 6px}
+.btn{display:inline-block;background:var(--butter);border:3px solid var(--thread);border-radius:999px;
+  padding:12px 26px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;text-decoration:none;color:var(--thread);
+  box-shadow:5px 5px 0 rgba(74,59,50,.2)}
+.btn.ghost{background:#FFFDF7}
+.small{font-size:14px;color:#8a7568;margin-top:10px}
+
+.tester-callout{position:relative;overflow:hidden;background:#FFFDF7;border:3px solid var(--thread);border-radius:18px;
+  margin:34px auto 8px;padding:24px 26px;text-align:center;box-shadow:7px 7px 0 rgba(74,59,50,.18)}
+.tester-callout::before{content:"";position:absolute;inset:0 0 auto;height:9px;
+  background:repeating-linear-gradient(90deg,var(--rose) 0 56px,var(--butter) 56px 112px,var(--sage) 112px 168px,var(--denim) 168px 224px)}
+.tester-kicker{display:inline-block;background:var(--cherry);color:#fff;border-radius:999px;padding:4px 12px;
+  font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;margin:4px 0 10px}
+.tester-callout h2{margin:0 0 8px;font-size:clamp(25px,5vw,34px)}
+.tester-callout p{max-width:650px;margin:0 auto;font-size:16.5px}
+.tester-progress{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--cherry);margin-top:10px!important}
+.tester-callout .cta{margin:20px 0 8px}
+.tester-callout .btn{min-width:210px}
+.btn.android{background:var(--butter)}
+.btn.web{background:var(--sage)}
+
+.hero{display:flex;justify-content:center;margin:34px 0 10px}
+.quilt{display:grid;grid-template-columns:repeat(16,1fr);width:min(340px,80vw);aspect-ratio:1;
+  border:3px solid var(--thread);border-radius:12px;overflow:hidden;box-shadow:8px 8px 0 rgba(74,59,50,.2)}
+.quilt i{display:block;box-shadow:inset 0 0 0 .6px rgba(74,59,50,.16)}
+
+section{padding:26px 0}
+h2{font-family:'Fredoka',sans-serif;font-size:clamp(24px,4.5vw,34px);text-align:center;margin:0 0 22px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#FFFDF7;border:3px solid var(--thread);border-radius:16px;padding:20px 22px;
+  box-shadow:6px 6px 0 rgba(74,59,50,.16)}
+.card h3{font-family:'Fredoka',sans-serif;font-size:19px;margin:0 0 7px}
+.card p{margin:0;font-size:15.5px}
+.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:8px}
+.shots img{width:100%;border:3px solid var(--thread);border-radius:14px;box-shadow:6px 6px 0 rgba(74,59,50,.16);display:block}
+.pill{display:inline-block;background:#fff;border:2.5px solid var(--thread);border-radius:999px;
+  padding:5px 13px;margin:4px 3px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:14px;
+  box-shadow:3px 3px 0 rgba(74,59,50,.14)}
+.center{text-align:center}
+footer{text-align:center;padding:34px 0 46px;font-size:14.5px;color:#8a7568}
+footer a{color:var(--denim)}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="p-gingham"></div><div class="p-stripe"></div><div class="p-dots"></div><div class="p-dots-sage"></div><div class="p-cherry"></div><div class="p-plum"></div><div class="p-gingham"></div><div class="p-stripe"></div></div>
+
+<div class="wrap">
+
+  <header>
+    <h1>Quilty as Charged</h1>
+    <div class="tag">guilty of buying more fabric</div>
+    <p class="lede">Paint a quilt square by square, and watch the cutting chart write itself — squares, width-of-fabric strips and yardage for every single fabric.</p>
+    <div class="cta">
+      <a class="btn" href="https://live.quiltyascharged.art">Use Quilty online</a>
+      <a class="btn ghost" href="#features">See what it does</a>
+      <a class="btn ghost" href="privacy.html">Privacy</a>
+    </div>
+    <div class="small">Free · No ads · No account · Works offline</div>
+  </header>
+
+  <aside class="tester-callout" aria-labelledby="tester-title">
+    <div class="tester-kicker">Testers needed</div>
+    <h2 id="tester-title">Help Quilty escape closed-testing purgatory</h2>
+    <p>Google Play requires 12 Android testers for 14 days before Quilty as Charged can apply for production. Join the test, keep it installed, and help us get this quilting toolkit into everyone’s hands.</p>
+    <p class="tester-progress">Our goal: 12 testers · 14 days · one public launch</p>
+    <div class="cta">
+      <a class="btn android" href="https://play.google.com/store/apps/details?id=com.quiltyascharged.app" target="_blank" rel="noopener">Join on Android</a>
+      <a class="btn web" href="https://play.google.com/apps/testing/com.quiltyascharged.app" target="_blank" rel="noopener">Join on the web</a>
+    </div>
+    <div class="small">You’ll need a Google account. Thank you for helping an indie app launch.</div>
+  </aside>
+
+  <div class="hero"><div class="quilt" id="quilt" role="img" aria-label="A pixel quilt: sage border with navy corner posts, a denim frame, and a red eight-point star with a butter-yellow centre"></div></div>
+
+  <section id="features">
+    <h2>The fabric math, done</h2>
+    <div class="grid">
+      <div class="card"><h3>🎨 Pixel → Quilt</h3><p>Grids from 8 × 8 to 24 × 24, twelve named fabrics, mirror and 4-way medallion symmetry, undo, eyedropper and a scrappy shuffle for when inspiration stalls.</p></div>
+      <div class="card"><h3>📋 Live cutting chart</h3><p>Finished size, cut size with the ¼" seam already added, and per fabric: squares, width-of-fabric strips and yardage to the nearest ⅛.</p></div>
+      <div class="card"><h3>🧱 Seven classic blocks</h3><p>Nine patch, checkerboard, sawtooth star, pinwheel, hourglass, log cabin and diamond medallion — one tap each.</p></div>
+      <div class="card"><h3>🎡 Colour studio</h3><p>A full colour wheel, harmonies, five ready-made palettes, and your own saved palettes — shareable as a short text code.</p></div>
+      <div class="card"><h3>🧮 Patch math</h3><p>Cut size, squares needed, squares per yard, total yardage, and an estimated cost from your price per yard.</p></div>
+      <div class="card"><h3>📐 Triangle math</h3><p>Half-square triangles, quarter-square triangles and no-waste flying geese, sized before you cut.</p></div>
+      <div class="card"><h3>📏 Backing &amp; binding</h3><p>Binding strips and yardage, optional borders and sashing, and how many backing panels — 4" overage per side included.</p></div>
+      <div class="card"><h3>🛏️ Charts you keep needing</h3><p>Standard quilt and batting sizes from crib to king, plus a pre-cut cheat sheet from fat quarters to honey buns.</p></div>
+      <div class="card"><h3>🔒 Yours alone</h3><p>No account, no ads, no analytics. Designs and palettes stay on your phone. Export a printable pattern sheet whenever you like.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Have a look</h2>
+    <div class="shots">
+      <img src="shot-designer.png" alt="The pixel quilt designer showing a star medallion design">
+      <img src="shot-chart.png" alt="The cutting chart listing squares, strips and yardage for seven fabrics">
+      <img src="shot-studio.png" alt="The colour studio with a colour wheel and lightness slider">
+      <img src="shot-math.png" alt="The patch math calculator showing cut size, squares needed and yardage">
+    </div>
+  </section>
+
+  <section class="center">
+    <h2>Built for the way quilters actually work</h2>
+    <p style="max-width:620px;margin:0 auto 18px">Every number assumes 42" usable width of fabric and a ¼" seam allowance, and rounds yardage up to the nearest eighth — the way you'd buy it at the counter.</p>
+    <div>
+      <span class="pill">42" WOF</span><span class="pill">¼" seams</span><span class="pill">⅛ yd rounding</span>
+      <span class="pill">No-waste geese</span><span class="pill">4" backing overage</span><span class="pill">Printable pattern sheets</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="strip"><div class="p-plum"></div><div class="p-cherry"></div><div class="p-dots-sage"></div><div class="p-dots"></div><div class="p-stripe"></div><div class="p-gingham"></div><div class="p-plum"></div><div class="p-cherry"></div></div>
+
+<footer>
+  Quilty as Charged 🧵 — <a href="privacy.html">Privacy policy</a><br>
+  <span style="font-size:13px">For Beffy ❤️</span>
+</footer>
+
+<script>
+// The same star medallion the app produces, drawn with the app's own fabrics.
+(function(){
+  var N=16,bg='#FAF3E3',star='#C94F4F',ctr='#F6C453',ring='#5B7B9A',bord='#8FAE8B',corn='#33415C',pt='#E8879B';
+  var a=new Array(N*N).fill(bg),i;
+  function set(r,c,h){ if(r>=0&&r<N&&c>=0&&c<N) a[r*N+c]=h; }
+  for(i=0;i<N;i++){set(0,i,bord);set(N-1,i,bord);set(i,0,bord);set(i,N-1,bord);}
+  [[0,0],[0,N-1],[N-1,0],[N-1,N-1]].forEach(function(p){set(p[0],p[1],corn);});
+  for(i=2;i<N-2;i++){set(2,i,ring);set(N-3,i,ring);set(i,2,ring);set(i,N-3,ring);}
+  var m=7.5;
+  for(var r=4;r<=11;r++)for(var c=4;c<=11;c++){var dr=Math.abs(r-m),dc=Math.abs(c-m);
+    if(dr+dc<=4.0)set(r,c,star); if(dr<=1.5&&dc<=1.5)set(r,c,ctr);}
+  [[3,7],[3,8],[12,7],[12,8],[7,3],[8,3],[7,12],[8,12]].forEach(function(p){set(p[0],p[1],star);});
+  [[4,4],[4,11],[11,4],[11,11]].forEach(function(p){set(p[0],p[1],pt);});
+  document.getElementById('quilt').innerHTML = a.map(function(h){
+    return '<i style="background:'+h+'"></i>'; }).join('');
+})();
+</script>
+</body>
+</html>

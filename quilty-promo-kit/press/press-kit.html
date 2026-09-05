@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quilty as Charged — Press Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:14mm}
+:root{--muslin:#FAF3E3;--butter:#F6C453;--rose:#E8879B;--sage:#8FAE8B;--denim:#5B7B9A;--cherry:#C94F4F;--thread:#4A3B32}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:var(--thread);line-height:1.5;font-size:11pt;background:#fff}
+.sheet{max-width:186mm;margin:0 auto;padding:6mm 0}
+
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;height:9mm;border:2px solid var(--thread);border-radius:5px;overflow:hidden}
+.strip>div{border:1px dashed rgba(255,255,255,.7)}
+.p-gingham{background:repeating-linear-gradient(0deg,rgba(255,255,255,.45) 0 6px,transparent 6px 12px),repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 6px,transparent 6px 12px),var(--rose)}
+.p-dots{background:radial-gradient(circle at 5px 5px,#fff8 2.5px,transparent 3px);background-size:13px 13px;background-color:var(--denim)}
+.p-dots-sage{background:radial-gradient(circle at 5px 5px,#fff8 2.5px,transparent 3px);background-size:13px 13px;background-color:var(--sage)}
+.p-stripe{background:repeating-linear-gradient(45deg,var(--butter) 0 8px,#fff5 8px 15px)}
+.p-cherry{background:repeating-linear-gradient(-45deg,var(--cherry) 0 10px,#d96a6a 10px 20px)}
+.p-plum{background:radial-gradient(circle at 7px 7px,#fff5 3.5px,transparent 4px);background-size:17px 17px;background-color:#8E6A9E}
+
+.head{display:flex;align-items:center;gap:7mm;margin:6mm 0 5mm}
+.quilt{display:grid;grid-template-columns:repeat(16,1fr);width:34mm;height:34mm;flex:none;
+  border:2px solid var(--thread);border-radius:4px;overflow:hidden}
+.quilt i{display:block}
+h1{font-family:'Fredoka',sans-serif;font-size:30pt;line-height:.98;margin:0;letter-spacing:-.5px}
+.tag{color:var(--cherry);font-weight:800;letter-spacing:1.8px;text-transform:uppercase;font-size:8.5pt;margin-top:2mm}
+.kicker{font-size:11.5pt;margin-top:3mm;max-width:110mm}
+
+h2{font-family:'Fredoka',sans-serif;font-size:14pt;margin:6mm 0 2.5mm;padding-bottom:1.5mm;
+  border-bottom:2px dashed rgba(74,59,50,.3)}
+p{margin:0 0 3mm}
+ul{margin:0 0 3mm;padding-left:5mm}
+li{margin:1.2mm 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+table{width:100%;border-collapse:collapse;font-size:10pt}
+td{padding:1.6mm 0;border-bottom:1px dashed rgba(74,59,50,.25);vertical-align:top}
+td:first-child{font-weight:800;width:38mm;color:#6b5749}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:2mm}
+.shots img{width:100%;border:1.5px solid var(--thread);border-radius:3mm;display:block}
+.cap{font-size:8pt;color:#8a7568;margin-top:1mm;text-align:center}
+.note{background:var(--muslin);border:1.5px dashed rgba(74,59,50,.35);border-radius:3mm;padding:3mm 4mm;font-size:10pt}
+footer{margin-top:6mm;text-align:center;font-size:9pt;color:#8a7568}
+.pagebreak{page-break-before:always}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<div class="strip"><div class="p-gingham"></div><div class="p-stripe"></div><div class="p-dots"></div><div class="p-dots-sage"></div><div class="p-cherry"></div><div class="p-plum"></div><div class="p-gingham"></div><div class="p-stripe"></div></div>
+
+<div class="head">
+  <div class="quilt" id="q"></div>
+  <div>
+    <h1>Quilty as Charged</h1>
+    <div class="tag">guilty of buying more fabric</div>
+    <div class="kicker">A free, offline quilting toolkit for Android. Paint a quilt on a grid and the cutting chart writes itself — squares, width-of-fabric strips and yardage for every fabric.</div>
+  </div>
+</div>
+
+<h2>At a glance</h2>
+<table>
+  <tr><td>App</td><td>Quilty as Charged</td></tr>
+  <tr><td>Package</td><td>com.quiltyascharged.app</td></tr>
+  <tr><td>Version</td><td>1.0.1</td></tr>
+  <tr><td>Platform</td><td>Android 5.1 (API 22) and above</td></tr>
+  <tr><td>Price</td><td>Free — no ads, no in-app purchases, no subscription</td></tr>
+  <tr><td>Category</td><td>Art &amp; Design / House &amp; Home</td></tr>
+  <tr><td>Privacy</td><td>No account, no analytics, no data collection. Designs stay on the device.</td></tr>
+  <tr><td>Contact</td><td>REPLACE_WITH_YOUR_EMAIL</td></tr>
+  <tr><td>Store listing</td><td>REPLACE_WITH_PLAY_URL</td></tr>
+</table>
+
+<h2>The story</h2>
+<p>Quilters spend a surprising amount of time doing arithmetic. How many 3½" squares come out of a width of fabric? How much backing for a queen? What size do I cut the squares for a four-inch flying goose? It is the least interesting part of a craft that is otherwise entirely about colour and texture, and it is usually done on the back of an envelope in a fabric shop.</p>
+<p>Quilty as Charged moves that arithmetic into your pocket. Its centrepiece is a pixel designer: paint a quilt square by square on a grid up to 24 × 24, using twelve named fabrics, with mirror and four-way medallion symmetry to keep things even. Underneath the grid, a cutting chart updates as you paint — how many squares of each fabric, how many width-of-fabric strips that needs, and how much yardage to buy, rounded up to the nearest eighth the way it is sold.</p>
+<p>Around that sit the calculations quilters repeat forever: half-square and quarter-square triangles, no-waste flying geese, borders, sashing, binding, backing panels, standard quilt and batting sizes, and a cheat sheet for the fat-quarter-to-honey-bun end of the fabric shop. There is a colour studio with a wheel, harmonies and saveable palettes you can pass to a friend as a short text code.</p>
+<p>The whole app is a single self-contained page in a native Android shell. Nothing is uploaded, nothing is tracked, and every feature works with the aeroplane mode on.</p>
+
+<h2>Features</h2>
+<div class="cols">
+<ul>
+  <li><b>Pixel quilt designer</b> — grids 8 × 8 to 24 × 24, twelve fabrics, four symmetry modes</li>
+  <li><b>Live cutting chart</b> — squares, WOF strips and ⅛-yard yardage per fabric</li>
+  <li><b>Seven block presets</b> — nine patch, checkerboard, sawtooth star, pinwheel, hourglass, log cabin, diamond medallion</li>
+  <li><b>Photo import</b> — matches an image to your fabric palette on device</li>
+  <li><b>Sewing Basket</b> — save, reload and edit designs</li>
+</ul>
+<ul>
+  <li><b>Colour studio</b> — wheel, lightness, harmonies, five preset palettes, shareable custom palettes</li>
+  <li><b>Patch math</b> — cut size, square count, yardage, estimated cost</li>
+  <li><b>Triangle math</b> — HSTs, QSTs, no-waste flying geese</li>
+  <li><b>Backing &amp; binding</b> — strips, panels, borders, sashing</li>
+  <li><b>Reference</b> — quilt and batting sizes, pre-cut cheat sheet, nine quilting tips</li>
+  <li><b>Pattern export</b> — printable grid + cutting list via the Android share sheet</li>
+</ul>
+</div>
+
+<div class="note">
+<b>Assumptions the maths uses:</b> 42" usable width of fabric · ¼" seam allowance on every side (cut size = finished + ½") · yardage rounded up to the nearest ⅛ yard · 4" backing overage per side · 12" extra binding for corners and joins.
+</div>
+
+<div class="pagebreak"></div>
+
+<h2>Screenshots</h2>
+<div class="shots">
+  <div><img src="ps-designer.png" alt=""><div class="cap">Pixel designer</div></div>
+  <div><img src="ps-chart.png" alt=""><div class="cap">Cutting chart</div></div>
+  <div><img src="ps-studio.png" alt=""><div class="cap">Colour studio</div></div>
+  <div><img src="ps-math.png" alt=""><div class="cap">Patch math</div></div>
+</div>
+<div class="shots" style="margin-top:4mm">
+  <div><img src="ps-tri.png" alt=""><div class="cap">Triangle math</div></div>
+  <div><img src="ps-bb.png" alt=""><div class="cap">Backing &amp; binding</div></div>
+  <div><img src="ps-sizes.png" alt=""><div class="cap">Size chart</div></div>
+  <div><img src="ps-precuts.png" alt=""><div class="cap">Pre-cut cheat sheet</div></div>
+</div>
+
+<h2>Brand</h2>
+<table>
+  <tr><td>Typefaces</td><td>Fredoka (headings) · Nunito (body)</td></tr>
+  <tr><td>Muslin</td><td>#FAF3E3 — the background of everything</td></tr>
+  <tr><td>Thread</td><td>#4A3B32 — text, borders and the offset shadow</td></tr>
+  <tr><td>Cherry</td><td>#C94F4F</td></tr>
+  <tr><td>Butter</td><td>#F6C453</td></tr>
+  <tr><td>Rose</td><td>#E8879B</td></tr>
+  <tr><td>Sage</td><td>#8FAE8B</td></tr>
+  <tr><td>Denim</td><td>#5B7B9A</td></tr>
+  <tr><td>Name</td><td>Always "Quilty as Charged" — capital Q and C, lower-case "as". Never "Quilty As Charged".</td></tr>
+  <tr><td>Tagline</td><td>"guilty of buying more fabric" — set in lower case, letter-spaced, in Cherry</td></tr>
+</table>
+
+<h2>Assets in this kit</h2>
+<ul>
+  <li><b>play-store/</b> — 512 icon, 1024 × 500 feature graphic, ten framed phone screenshots (1080 × 1920), ten unframed captures, two tablet captures</li>
+  <li><b>social/</b> — Instagram square and story, Pinterest pin, X header, Facebook cover</li>
+  <li><b>web/</b> — a ready-to-host landing page and privacy policy</li>
+  <li><b>press/</b> — this document, as HTML and PDF</li>
+  <li><b>COPY.md</b> — store descriptions, taglines, social posts, ASO keywords, release notes</li>
+</ul>
+
+<p>Screenshots and graphics may be reproduced freely in coverage of the app.</p>
+
+<footer>Quilty as Charged 🧵 — press kit generated 5 September 2026 — For Beffy ❤️</footer>
+
+</div>
+<script>
+(function(){
+  var N=16,bg='#FAF3E3',star='#C94F4F',ctr='#F6C453',ring='#5B7B9A',bord='#8FAE8B',corn='#33415C',pt='#E8879B';
+  var a=new Array(N*N).fill(bg),i;
+  function set(r,c,h){ if(r>=0&&r<N&&c>=0&&c<N) a[r*N+c]=h; }
+  for(i=0;i<N;i++){set(0,i,bord);set(N-1,i,bord);set(i,0,bord);set(i,N-1,bord);}
+  [[0,0],[0,N-1],[N-1,0],[N-1,N-1]].forEach(function(p){set(p[0],p[1],corn);});
+  for(i=2;i<N-2;i++){set(2,i,ring);set(N-3,i,ring);set(i,2,ring);set(i,N-3,ring);}
+  var m=7.5;
+  for(var r=4;r<=11;r++)for(var c=4;c<=11;c++){var dr=Math.abs(r-m),dc=Math.abs(c-m);
+    if(dr+dc<=4.0)set(r,c,star); if(dr<=1.5&&dc<=1.5)set(r,c,ctr);}
+  [[3,7],[3,8],[12,7],[12,8],[7,3],[8,3],[7,12],[8,12]].forEach(function(p){set(p[0],p[1],star);});
+  [[4,4],[4,11],[11,4],[11,11]].forEach(function(p){set(p[0],p[1],pt);});
+  document.getElementById('q').innerHTML=a.map(function(h){return '<i style="background:'+h+'"></i>';}).join('');
+})();
+</script>
+</body>
+</html>

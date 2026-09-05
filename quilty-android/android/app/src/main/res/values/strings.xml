@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Quilty as Charged</string>
+    <string name="title_activity_main">Quilty as Charged</string>
+    <string name="package_name">com.quiltyascharged.app</string>
+    <string name="custom_url_scheme">com.quiltyascharged.app</string>
+</resources>

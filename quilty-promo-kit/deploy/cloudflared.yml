@@ -1,0 +1,7 @@
+tunnel: 7e0f8dee-085d-466a-93ee-445c15c2f3c2
+credentials-file: /etc/cloudflared/7e0f8dee-085d-466a-93ee-445c15c2f3c2.json
+originRequest:
+  connectTimeout: 10s
+  noHappyEyeballs: true
+ingress:
+  - service: http://127.0.0.1:80

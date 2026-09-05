@@ -1,0 +1,39 @@
+# Dependencies and generated builds
+node_modules/
+.gradle/
+**/build/
+bin/
+gen/
+out/
+.externalNativeBuild/
+.cxx/
+
+# Android machine-specific/generated files
+local.properties
+*.apk
+*.aab
+*.aar
+*.ap_
+*.dex
+*.class
+*.iml
+.idea/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/app/src/main/res/xml/config.xml
+
+# Signing credentials and secrets
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example
+
+# Exported archives and OS/editor files
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

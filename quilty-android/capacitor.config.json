@@ -1,0 +1,8 @@
+{
+  "appId": "com.quiltyascharged.app",
+  "appName": "Quilty as Charged",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#FAF3E3"
+  }
+}
